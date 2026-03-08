@@ -264,10 +264,9 @@ section {
   aspect-ratio: 3 / 2;
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(0,0,0,0.4);
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .slide {
