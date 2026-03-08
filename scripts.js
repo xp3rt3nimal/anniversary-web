@@ -181,4 +181,24 @@
       })(i);
     }
   }
+  // --- RELATIONSHIP TIMER ---
+var startDate = new Date("2026-01-08T16:30:00"); // CHANGE THIS DATE
+
+function updateCounter() {
+  var now = new Date();
+  var diff = now - startDate;
+
+  var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  var minutes = Math.floor((diff / (1000 * 60)) % 60);
+  var seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+}
+
+setInterval(updateCounter, 1000);
+updateCounter();
 })();
