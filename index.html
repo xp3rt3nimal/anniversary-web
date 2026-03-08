@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Stars background -->
+  <div class="stars" id="stars"></div>
+
+  <!-- Music overlay -->
+  <div class="music-overlay" id="musicOverlay">
+    <div class="music-prompt">
+      <p>Tap anywhere to begin</p>
+      <span class="heart-pulse">❤️</span>
+    </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Music toggle -->
+  <button class="music-toggle" id="musicToggle" title="Toggle music">♫</button>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <h1 class="hero-title">Hey You ❤️</h1>
+    <p class="hero-subtitle">Scroll slowly&hellip;</p>
+    <div class="scroll-arrow">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </section>
+
+  <!-- SCROLL STORY SECTIONS -->
+  <section class="story-section reveal">
+    <div class="story-content">
+      <h2>These last two months&hellip;</h2>
+      <p>have honestly been some of my favourite days.</p>
+    </div>
+  </section>
+
+  <section class="story-section reveal">
+    <div class="story-content">
+      <h2>Every moment with you</h2>
+      <p>feels like the whole world slows down, just for us.</p>
+    </div>
+  </section>
+
+  <section class="story-section reveal">
+    <div class="story-content">
+      <h2>You make me smile</h2>
+      <p>in ways I didn't even know were possible.</p>
+    </div>
+  </section>
+
+  <section class="story-section reveal">
+    <div class="story-content">
+      <h2>And the little things&hellip;</h2>
+      <p>your laugh, your voice, the way you look at me &mdash; I notice it all.</p>
+    </div>
+  </section>
+
+  <!-- PHOTO SLIDESHOW -->
+  <section class="slideshow-section reveal">
+    <h2 class="section-heading">Some moments I love</h2>
+    <div class="slideshow-container">
+      <div class="slides">
+        <img src="https://placehold.co/600x400/ffb6c1/fff?text=Us+%E2%9D%A4%EF%B8%8F+1" class="slide active" alt="Memory 1">
+        <img src="https://placehold.co/600x400/f8a4c8/fff?text=Us+%E2%9D%A4%EF%B8%8F+2" class="slide" alt="Memory 2">
+        <img src="https://placehold.co/600x400/e896b0/fff?text=Us+%E2%9D%A4%EF%B8%8F+3" class="slide" alt="Memory 3">
+        <img src="https://placehold.co/600x400/d4a0c0/fff?text=Us+%E2%9D%A4%EF%B8%8F+4" class="slide" alt="Memory 4">
+      </div>
+      <div class="slideshow-dots" id="slideshowDots"></div>
+    </div>
+  </section>
+
+  <!-- TYPING LOVE LETTER -->
+  <section class="letter-section reveal" id="letterSection">
+    <h2 class="section-heading">A little message for you</h2>
+    <div class="letter-box">
+      <p id="typed"></p>
+      <span class="cursor" id="cursor">|</span>
+    </div>
+  </section>
+
+  <!-- ENVELOPE SURPRISE -->
+  <section class="envelope-section reveal">
+    <button class="envelope-btn" id="openBtn">Open Your Surprise 💌</button>
+    <div class="envelope-content" id="envelope">
+      <div class="envelope-message">
+        <p>You make ordinary days feel special.</p>
+        <p>Thank you for being in my life.</p>
+        <p>I can't wait for more memories with you.</p>
+        <p class="envelope-heart">💕</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECRET FINAL PAGE TRIGGER -->
+  <section class="final-section reveal">
+    <button class="final-btn" id="finalBtn">One last thing&hellip;</button>
+  </section>
+
+  <!-- SECRET FINAL PAGE -->
+  <div class="secret-page" id="secretPage">
+    <div class="secret-content">
+      <h1>I really really like you ❤️</h1>
+      <p>Happy 2 months.</p>
+      <div class="floating-hearts" id="floatingHearts"></div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
