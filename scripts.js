@@ -223,6 +223,7 @@ function startCounter() {
   if (counterStarted) return;
 
   var section = document.getElementById("counterSection");
+  if(!section) return;
   var rect = section.getBoundingClientRect();
 
   if (rect.top < window.innerHeight * 0.8) {
