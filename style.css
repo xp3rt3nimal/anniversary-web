@@ -666,6 +666,7 @@ section {
 
 .time-box span {
   font-size: 2.5rem;
+  animation: softPulse 2s infinite;
   color: #ffb6c1;
   font-weight: 600;
 }
@@ -675,6 +676,10 @@ section {
   color: rgba(255,255,255,0.7);
 }
 
+@keyframes softPulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+}
 /* --- CONSTELLATION HEART --- */
 
 #constellation{
