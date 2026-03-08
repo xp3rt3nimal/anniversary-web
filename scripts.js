@@ -107,7 +107,7 @@
   var letterSection = document.getElementById('letterSection');
   var typedEl = document.getElementById('typed');
   var cursorEl = document.getElementById('cursor');
-  var loveText = "These two months with you have been amazing. I love the way you laugh, the way we talk, and the little moments we share. You turned something simple into something beautiful. Thank you for being you.";
+  var loveText = "To the most important person in my life, I just want to say how much I love you. These past two months with you have been the happiest of my life. Every moment feels magical, and I cherish every second we spend together. You make me smile in ways I never thought possible, and even on the toughest days, just thinking about you brightens everything. Thank you for being you, and for being in my life. I love you more than words can express.";
   var charIndex = 0;
   var typingStarted = false;
 
