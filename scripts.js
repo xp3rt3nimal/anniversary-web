@@ -200,23 +200,39 @@
 }
 
   // --- RELATIONSHIP TIMER ---
-var startDate = new Date("2026-01-03T16:30:00+05:30"); // CHANGE DATE
+var startDate = new Date("2026-01-03T16:30:00+05:30");
 
 var counterStarted = false;
 var counterAnimated = false;
 
-if (!counterAnimated) {
-  animateValue(document.getElementById("days"),0,days,800);
-  animateValue(document.getElementById("hours"),0,hours,800);
-  animateValue(document.getElementById("minutes"),0,minutes,800);
-  animateValue(document.getElementById("seconds"),0,seconds,800);
+function updateCounter() {
 
-  counterAnimated = true;
-} else {
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+  var now = new Date();
+  var diff = now - startDate;
+
+  var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  var minutes = Math.floor((diff / (1000 * 60)) % 60);
+  var seconds = Math.floor((diff / 1000) % 60);
+
+  if (!counterAnimated) {
+
+    animateValue(document.getElementById("days"),0,days,800);
+    animateValue(document.getElementById("hours"),0,hours,800);
+    animateValue(document.getElementById("minutes"),0,minutes,800);
+    animateValue(document.getElementById("seconds"),0,seconds,800);
+
+    counterAnimated = true;
+
+  } else {
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+
+  }
+
 }
 
 function startCounter() {
