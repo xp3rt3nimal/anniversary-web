@@ -181,8 +181,27 @@
       })(i);
     }
   }
+
+  function animateValue(element, start, end, duration) {
+  var startTimestamp = null;
+
+  function step(timestamp) {
+    if (!startTimestamp) startTimestamp = timestamp;
+    var progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    element.textContent = Math.floor(progress * (end - start) + start);
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  }
+
+  window.requestAnimationFrame(step);
+}
+
   // --- RELATIONSHIP TIMER ---
-var startDate = new Date("2026-01-08T16:30:00"); // CHANGE THIS DATE
+var startDate = new Date("2026-01-08T16:30:00"); // CHANGE DATE
+
+var counterStarted = false;
 
 function updateCounter() {
   var now = new Date();
@@ -199,6 +218,18 @@ function updateCounter() {
   document.getElementById("seconds").textContent = seconds;
 }
 
-setInterval(updateCounter, 1000);
-updateCounter();
+function startCounter() {
+  if (counterStarted) return;
+
+  var section = document.getElementById("counterSection");
+  var rect = section.getBoundingClientRect();
+
+  if (rect.top < window.innerHeight * 0.8) {
+    counterStarted = true;
+    updateCounter();
+    setInterval(updateCounter, 1000);
+  }
+}
+
+window.addEventListener("scroll", startCounter);
 })();
