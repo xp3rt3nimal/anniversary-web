@@ -199,7 +199,7 @@
 }
 
   // --- RELATIONSHIP TIMER ---
-var startDate = new Date("2026-01-08T16:30:00"); // CHANGE DATE
+var startDate = new Date("2026-01-03T16:30:00"); // CHANGE DATE
 
 var counterStarted = false;
 
