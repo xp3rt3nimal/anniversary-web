@@ -213,10 +213,10 @@ function updateCounter() {
   var minutes = Math.floor((diff / (1000 * 60)) % 60);
   var seconds = Math.floor((diff / 1000) % 60);
 
-  document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = hours;
-  document.getElementById("minutes").textContent = minutes;
-  document.getElementById("seconds").textContent = seconds;
+  animateValue(document.getElementById("days"),0,days,800);
+  animateValue(document.getElementById("hours"),0,hours,800);
+  animateValue(document.getElementById("minutes"),0,minutes,800);
+  animateValue(document.getElementById("seconds"),0,seconds,800);
 }
 
 function startCounter() {
