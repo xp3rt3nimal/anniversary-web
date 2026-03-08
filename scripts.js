@@ -152,8 +152,9 @@
   var secretPage = document.getElementById('secretPage');
 
   finalBtn.addEventListener('click', function () {
-    secretPage.classList.add('visible');
-    spawnHearts();
+  secretPage.classList.add('visible');
+  spawnHearts();
+  drawHeartConstellation();
   });
 
   function spawnHearts() {
@@ -232,4 +233,48 @@ function startCounter() {
 }
 
 window.addEventListener("scroll", startCounter);
+
+function drawHeartConstellation(){
+
+  var canvas = document.getElementById("constellation");
+  var ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  var points = [
+    [0,3],[1,1],[2,0],[3,1],[4,3],
+    [3,5],[2,6],[1,5]
+  ];
+
+  var scale = 80;
+  var offsetX = canvas.width/2 - 2*scale;
+  var offsetY = canvas.height/2 - 3*scale;
+
+  var stars = points.map(function(p){
+    return {
+      x: offsetX + p[0]*scale,
+      y: offsetY + p[1]*scale
+    };
+  });
+
+  ctx.fillStyle="#ffb6c1";
+
+  stars.forEach(function(star){
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, 4, 0, Math.PI*2);
+    ctx.fill();
+  });
+
+  ctx.strokeStyle="rgba(255,182,193,0.6)";
+  ctx.lineWidth=2;
+
+  for(var i=0;i<stars.length;i++){
+    var next=(i+1)%stars.length;
+    ctx.beginPath();
+    ctx.moveTo(stars[i].x,stars[i].y);
+    ctx.lineTo(stars[next].x,stars[next].y);
+    ctx.stroke();
+  }
+}
 })();
